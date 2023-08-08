@@ -3,6 +3,8 @@ import Main from "../Layouts/Main/Main";
 import Home from "../Pages/Home/Home/Home";
 import Category from "../Pages/Category/Category/Category";
 import News from "../Pages/News/News/News";
+import LogIn from "../Pages/LogIn/LogIn";
+import Register from '../Pages/Register/Register'
 
 export const routes=createBrowserRouter([
     {
@@ -23,6 +25,14 @@ export const routes=createBrowserRouter([
                 path:'/news/:id',
                 element:<News></News>,
                 loader:({params})=>fetch(`http://localhost:9000/news/${params.id}`)
+            },
+            {
+                path:'/logIn',
+                element:<LogIn></LogIn>
+            },
+            {
+                path:'/register',
+                element:<Register></Register>
             }
         ]
     }
