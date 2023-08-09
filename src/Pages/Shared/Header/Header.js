@@ -43,7 +43,7 @@ const Header = () => {
                 </Link>
               </>
             )}
-
+            <Link to='/profile'>
             {user?.photoURL ? (
               <Image
                 style={{ height: "30px" }}
@@ -53,6 +53,7 @@ const Header = () => {
             ) : (
               <FaUser></FaUser>
             )}
+            </Link>
           </Navbar.Text>
         </Navbar.Collapse>
       </Container>

@@ -12,7 +12,7 @@ const LogIn = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
-  const { logInViaPass } = useContext(AuthContext);
+  const { logInViaPass,setLoading} = useContext(AuthContext);
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -30,11 +30,13 @@ const LogIn = () => {
           toast.error("Your Email Isn't Verfied");
         }
       })
-
       .catch((e) => {
         console.error(e);
         setError(e.message);
-      });
+      })
+      .finall(()=>{
+        setLoading(false)
+      })
   };
   return (
     <Form onSubmit={handleSubmit}>
